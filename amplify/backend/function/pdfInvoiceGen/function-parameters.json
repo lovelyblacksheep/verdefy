@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "api": {
+      "verdefyvite": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    },
+    "storage": {
+      "verdefy": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

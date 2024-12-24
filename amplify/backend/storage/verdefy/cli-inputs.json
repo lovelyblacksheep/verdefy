@@ -1,0 +1,17 @@
+{
+  "resourceName": "verdefy",
+  "policyUUID": "f11f63bb",
+  "bucketName": "verdefyvite24155f2d1a634d6c8a8f15b1716a6877",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE"
+}

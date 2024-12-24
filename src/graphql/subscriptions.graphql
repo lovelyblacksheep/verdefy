@@ -1,0 +1,400 @@
+# this is an auto generated file. This will be overwritten
+
+subscription OnCreateSalesperson(
+  $filter: ModelSubscriptionSalespersonFilterInput
+) {
+  onCreateSalesperson(filter: $filter) {
+    id
+    grossSalesToCustomers
+    grossProfitForDealership
+    ourProfitFromThem
+    lifetimeTotalTransactions
+    firstName
+    lastName
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    Transactions {
+      nextToken
+      __typename
+    }
+    dealershipID
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateSalesperson(
+  $filter: ModelSubscriptionSalespersonFilterInput
+) {
+  onUpdateSalesperson(filter: $filter) {
+    id
+    grossSalesToCustomers
+    grossProfitForDealership
+    ourProfitFromThem
+    lifetimeTotalTransactions
+    firstName
+    lastName
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    Transactions {
+      nextToken
+      __typename
+    }
+    dealershipID
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteSalesperson(
+  $filter: ModelSubscriptionSalespersonFilterInput
+) {
+  onDeleteSalesperson(filter: $filter) {
+    id
+    grossSalesToCustomers
+    grossProfitForDealership
+    ourProfitFromThem
+    lifetimeTotalTransactions
+    firstName
+    lastName
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    Transactions {
+      nextToken
+      __typename
+    }
+    dealershipID
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateDealership(
+  $filter: ModelSubscriptionDealershipFilterInput
+) {
+  onCreateDealership(filter: $filter) {
+    id
+    outstandingBalance
+    grossSalesToCustomers
+    grossProfits
+    ourProfitFromThem
+    theirProfitMarginDollars
+    theirProfitMarginPercent
+    lifetimeTotalTransactions
+    Invoices {
+      nextToken
+      __typename
+    }
+    name
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    contactPerson
+    Salespeople {
+      nextToken
+      __typename
+    }
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateDealership(
+  $filter: ModelSubscriptionDealershipFilterInput
+) {
+  onUpdateDealership(filter: $filter) {
+    id
+    outstandingBalance
+    grossSalesToCustomers
+    grossProfits
+    ourProfitFromThem
+    theirProfitMarginDollars
+    theirProfitMarginPercent
+    lifetimeTotalTransactions
+    Invoices {
+      nextToken
+      __typename
+    }
+    name
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    contactPerson
+    Salespeople {
+      nextToken
+      __typename
+    }
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteDealership(
+  $filter: ModelSubscriptionDealershipFilterInput
+) {
+  onDeleteDealership(filter: $filter) {
+    id
+    outstandingBalance
+    grossSalesToCustomers
+    grossProfits
+    ourProfitFromThem
+    theirProfitMarginDollars
+    theirProfitMarginPercent
+    lifetimeTotalTransactions
+    Invoices {
+      nextToken
+      __typename
+    }
+    name
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    contactPerson
+    Salespeople {
+      nextToken
+      __typename
+    }
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateInvoice($filter: ModelSubscriptionInvoiceFilterInput) {
+  onCreateInvoice(filter: $filter) {
+    id
+    isPaid
+    Transactions {
+      nextToken
+      __typename
+    }
+    s3Link
+    dueDate
+    pastDue
+    dealershipID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateInvoice($filter: ModelSubscriptionInvoiceFilterInput) {
+  onUpdateInvoice(filter: $filter) {
+    id
+    isPaid
+    Transactions {
+      nextToken
+      __typename
+    }
+    s3Link
+    dueDate
+    pastDue
+    dealershipID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteInvoice($filter: ModelSubscriptionInvoiceFilterInput) {
+  onDeleteInvoice(filter: $filter) {
+    id
+    isPaid
+    Transactions {
+      nextToken
+      __typename
+    }
+    s3Link
+    dueDate
+    pastDue
+    dealershipID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateTransaction(
+  $filter: ModelSubscriptionTransactionFilterInput
+) {
+  onCreateTransaction(filter: $filter) {
+    id
+    customerID
+    vehicleMake
+    vehicleModel
+    vehicleYear
+    VIN
+    isDiesel
+    averageMPG
+    offsetCost
+    ourMarkup
+    dealerMarkup
+    MSRP
+    s3Link
+    invoiceID
+    salespersonID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateTransaction(
+  $filter: ModelSubscriptionTransactionFilterInput
+) {
+  onUpdateTransaction(filter: $filter) {
+    id
+    customerID
+    vehicleMake
+    vehicleModel
+    vehicleYear
+    VIN
+    isDiesel
+    averageMPG
+    offsetCost
+    ourMarkup
+    dealerMarkup
+    MSRP
+    s3Link
+    invoiceID
+    salespersonID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteTransaction(
+  $filter: ModelSubscriptionTransactionFilterInput
+) {
+  onDeleteTransaction(filter: $filter) {
+    id
+    customerID
+    vehicleMake
+    vehicleModel
+    vehicleYear
+    VIN
+    isDiesel
+    averageMPG
+    offsetCost
+    ourMarkup
+    dealerMarkup
+    MSRP
+    s3Link
+    invoiceID
+    salespersonID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateCustomer($filter: ModelSubscriptionCustomerFilterInput) {
+  onCreateCustomer(filter: $filter) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    address1
+    address2
+    city
+    state
+    zipCode
+    yearOfBirth
+    monthOfBirth
+    dayOfBirth
+    gender
+    Transactions {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateCustomer($filter: ModelSubscriptionCustomerFilterInput) {
+  onUpdateCustomer(filter: $filter) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    address1
+    address2
+    city
+    state
+    zipCode
+    yearOfBirth
+    monthOfBirth
+    dayOfBirth
+    gender
+    Transactions {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteCustomer($filter: ModelSubscriptionCustomerFilterInput) {
+  onDeleteCustomer(filter: $filter) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    address1
+    address2
+    city
+    state
+    zipCode
+    yearOfBirth
+    monthOfBirth
+    dayOfBirth
+    gender
+    Transactions {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}

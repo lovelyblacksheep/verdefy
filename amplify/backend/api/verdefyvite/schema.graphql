@@ -1,0 +1,171 @@
+type Salesperson @model @auth(rules: [{allow: private, provider: userPools, groups: ["admins", "mgmt", "sales"], operations: [create, read, update, delete]}]) {
+  id: ID!
+  grossSalesToCustomers: Float
+  grossProfitForDealership: Float
+  ourProfitFromThem: Float
+  lifetimeTotalTransactions: Int
+  firstName: String
+  lastName: String
+  address1: String
+  address2: String
+  city: String
+  state: String
+  phone: String
+  email: String
+  Transactions: [Transaction] @hasMany(indexName: "bySalesperson", fields: ["id"])
+  dealershipID: ID! @index(name: "byDealership")
+  userId: String
+  Dealership: Dealership @belongsTo(fields: ["dealershipID"])
+}
+
+type Dealership @model @auth(rules: [{allow: private, provider: userPools, groups: ["admins", "mgmt"], operations: [create, read, update, delete]}]) {
+  id: ID!
+  outstandingBalance: Float
+  grossSalesToCustomers: Float
+  grossProfits: Float
+  ourProfitFromThem: Float
+  theirProfitMarginDollars: Float
+  theirProfitMarginPercent: Float
+  lifetimeTotalTransactions: Int
+  Invoices: [Invoice] @hasMany(indexName: "byDealership", fields: ["id"])
+  name: String
+  address1: String
+  address2: String
+  city: String
+  state: String
+  zip: String
+  phone: String
+  email: String
+  contactPerson: String
+  Salespeople: [Salesperson] @hasMany(indexName: "byDealership", fields: ["id"])
+  Customer: [Customer] @hasMany(indexName: "byDealership", fields: ["id"])
+}
+
+type Invoice @model @auth(rules: [{allow: private, provider: userPools, groups: ["admins"], operations: [create, read, update, delete]}, {allow: private, provider: userPools, groups: ["mgmt"], operations: [read]}]) {
+  id: ID!
+  isPaid: Boolean
+  Transactions: [Transaction] @hasMany(indexName: "byInvoice", fields: ["id"])
+  s3Link: String
+  dueDate: String
+  pastDue: Boolean
+  dealershipID: ID! @index(name: "byDealership")
+}
+
+type Transaction @model @auth(rules: [{allow: private, provider: userPools, groups: ["admins", "sales", "mgmt"], operations: [create, read, update, delete]}]) {
+  id: ID!
+  customerID: ID! @index(name: "byCustomer")
+  vehicleMake: String!
+  vehicleModel: String!
+  vehicleYear: Int!
+  VIN: String!
+  vehicleType: String!
+  isDiesel: Boolean!
+  averageMPG: Int!
+  offsetCost: String
+  ourMarkup: String
+  dealerMarkup: String
+  MSRP: String
+  s3Link: String
+  invoiceID: ID @index(name: "byInvoice")
+  salespersonID: ID! @index(name: "bySalesperson")
+  Customer: Customer @belongsTo(fields: ["customerID"])
+  Salesperson: Salesperson @belongsTo(fields: ["salespersonID"])
+}
+
+type Customer @model @auth(rules: [{allow: private, provider: userPools, groups: ["admins", "sales", "mgmt"], operations: [create, read, update, delete]}]) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String
+  address1: String
+  address2: String
+  city: String
+  state: String
+  zipCode: String
+  country: String
+  yearOfBirth: Int
+  monthOfBirth: Int
+  dayOfBirth: Int
+  gender: String
+  Transactions: [Transaction] @hasMany(indexName: "byCustomer", fields: ["id"])
+  dealershipID: ID! @index(name: "byDealership")
+  Dealership: Dealership @belongsTo(fields: ["dealershipID"])
+}
+ 
+type Mutation {
+  generateInvoicePDF(invoice: String, dealership: DealershipInput, transactions: [GenerateInvoicePDFTransationInput]):String @function(name: "pdfInvoiceGen-${env}") @auth(rules: [{allow: private, provider: userPools, groups: ["admins"]}])
+}
+
+input DealershipInput {
+      id: ID
+      outstandingBalance: Float
+      grossSalesToCustomers: Float
+      grossProfits: Float
+      ourProfitFromThem: Float
+      theirProfitMarginDollars: Float
+      theirProfitMarginPercent: Float
+      lifetimeTotalTransactions: Int
+      name: String
+      address1: String
+      address2: String
+      city: String
+      state: String
+      zip: String
+      phone: String
+      email: String
+      contactPerson: String
+}
+
+input CustomerInput {
+        id: ID
+        firstName: String!
+        lastName: String!
+        email: String!
+        phone: String
+        address1: String
+        address2: String
+        city: String
+        state: String
+        zipCode: String
+        country: String
+        yearOfBirth: Int
+        monthOfBirth: Int
+        dayOfBirth: Int
+        gender: String
+}
+
+input SalespersonInput {
+        id: ID
+        grossSalesToCustomers: Float
+        grossProfitForDealership: Float
+        ourProfitFromThem: Float
+        lifetimeTotalTransactions: Int
+        firstName: String
+        lastName: String
+        address1: String
+        address2: String
+        city: String
+        state: String
+        phone: String
+        email: String
+        dealershipID: ID!
+        userId: String
+}
+
+input GenerateInvoicePDFTransationInput {
+  vehicleMake: String!
+  vehicleModel: String!
+  vehicleYear: Int!
+  vehicleType: String!
+  VIN: String!
+  isDiesel: Boolean!
+  averageMPG: Int!
+  offsetCost: String
+  ourMarkup: String
+  dealerMarkup: String
+  MSRP: String
+  s3Link: String
+  Customer: CustomerInput
+  Salesperson: SalespersonInput
+}

@@ -1,0 +1,149 @@
+{
+  "typeName": "Mutation",
+  "fieldName": "generateInvoicePDF",
+  "arguments": {
+    "invoice": "1afc50e2-6695-4d0e-8f5c-6a79abfa5cbe",
+    "dealership": {
+      "outstandingBalance": null,
+      "grossSalesToCustomers": null,
+      "grossProfits": null,
+      "ourProfitFromThem": null,
+      "theirProfitMarginDollars": null,
+      "theirProfitMarginPercent": null,
+      "lifetimeTotalTransactions": null,
+      "name": "Mercedes of Rockford",
+      "address1": "111 Perryville Rd",
+      "address2": null,
+      "city": "Loves Park",
+      "state": "IL",
+      "zip": "61111",
+      "phone": "9491233211",
+      "email": "mercedes@mrockford.com",
+      "contactPerson": "David Hong"
+    },
+    "transactions": [
+      {
+        "vehicleMake": "Ford",
+        "vehicleModel": "800",
+        "vehicleYear": 2024,
+        "VIN": "12356",
+        "isDiesel": false,
+        "averageMPG": 5617,
+        "offsetCost": "2345",
+        "ourMarkup": "Their",
+        "dealerMarkup": "Whose",
+        "MSRP": "AAA",
+        "s3Link": null,
+        "Customer": {
+          "id": "83126065-edf4-4dd2-bfe2-0dc43d4d25ba",
+          "firstName": "Daniel",
+          "lastName": "Hong",
+          "email": "test@gmail.com",
+          "phone": "1234567890",
+          "address1": "2134",
+          "address2": "aaa",
+          "city": "Los Angeles",
+          "state": "California",
+          "zipCode": "90049",
+          "country": "USA",
+          "yearOfBirth": 1993,
+          "monthOfBirth": 1,
+          "dayOfBirth": 12,
+          "gender": null
+        },
+        "Salesperson": {
+          "id": "29902d70-0410-465d-9662-24e59b0f5f12",
+          "grossSalesToCustomers": null,
+          "grossProfitForDealership": null,
+          "ourProfitFromThem": null,
+          "lifetimeTotalTransactions": null,
+          "firstName": "Daniel",
+          "lastName": "Hong",
+          "address1": null,
+          "address2": null,
+          "city": null,
+          "state": null,
+          "phone": null,
+          "email": "talentservice129+7@gmail.com",
+          "dealershipID": "769baa3b-70ae-4a29-9fa8-8cd1beb03c5f",
+          "userId": "16432384-b8db-4a67-b149-68e66758eada"
+        }
+      }
+    ]
+  },
+  "identity": {
+    "claims": {
+      "sub": "5bc99580-a77a-43b6-816d-056892e46554",
+      "cognito:groups": [
+        "admins",
+        "sales"
+      ],
+      "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_tsnOlBfqr",
+      "client_id": "263o5qebf6cqs73vipdpeg2afi",
+      "origin_jti": "4dcec745-6794-4b4e-a4f8-93b367e12dde",
+      "event_id": "446f7792-9458-4d6e-a67d-c66aa007f427",
+      "token_use": "access",
+      "scope": "aws.cognito.signin.user.admin",
+      "auth_time": 1709534375,
+      "exp": 1709664888,
+      "iat": 1709661288,
+      "jti": "36f476a3-27e9-4fd4-ab7e-c2b1bd535f44",
+      "username": "5bc99580-a77a-43b6-816d-056892e46554"
+    },
+    "defaultAuthStrategy": "ALLOW",
+    "groups": [
+      "admins",
+      "sales"
+    ],
+    "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_tsnOlBfqr",
+    "sourceIp": [
+      "104.223.97.47"
+    ],
+    "sub": "5bc99580-a77a-43b6-816d-056892e46554",
+    "username": "5bc99580-a77a-43b6-816d-056892e46554"
+  },
+  "source": null,
+  "request": {
+    "headers": {
+      "x-forwarded-for": "104.223.97.47, 18.68.49.183",
+      "sec-ch-ua-mobile": "?0",
+      "cloudfront-viewer-country": "US",
+      "cloudfront-is-tablet-viewer": "false",
+      "x-amzn-requestid": "feabf3cf-3bae-42dc-a908-b48985d9f682",
+      "pragma": "no-cache",
+      "via": "2.0 5b6fc5e6e81eb4e8322aa4aa6e8072d6.cloudfront.net (CloudFront)",
+      "cloudfront-forwarded-proto": "https",
+      "origin": "http://localhost:4000",
+      "content-length": "1708",
+      "cache-control": "no-cache",
+      "x-forwarded-proto": "https",
+      "accept-language": "en-US,en;q=0.9",
+      "host": "6t4oof2ojzalto23wq2jz5lqqy.appsync-api.us-east-1.amazonaws.com",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+      "cloudfront-is-mobile-viewer": "false",
+      "accept": "*/*",
+      "cloudfront-viewer-asn": "8100",
+      "cloudfront-is-smarttv-viewer": "false",
+      "x-amzn-appsync-is-vpce-request": "false",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "referer": "http://localhost:4000/",
+      "x-amzn-remote-ip": "104.223.97.47",
+      "content-type": "application/json; charset=UTF-8",
+      "sec-fetch-mode": "cors",
+      "x-amzn-trace-id": "Root=1-65e765d6-5a61fcd6658160f3377609d6",
+      "x-amz-cf-id": "2J2bh0Jr8vhr-ryIAnlzLfN3fLbytx-9ofwtWEMlWh1ucjGkKOp-Nw==",
+      "authorization": "eyJraWQiOiJLU3NpYUFXV3plQTdEYUREeHdYdVpMVkRNZGNqdVdVTnNVYWFZQ1VuY0JzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI1YmM5OTU4MC1hNzdhLTQzYjYtODE2ZC0wNTY4OTJlNDY1NTQiLCJjb2duaXRvOmdyb3VwcyI6WyJhZG1pbnMiLCJzYWxlcyJdLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV90c25PbEJmcXIiLCJjbGllbnRfaWQiOiIyNjNvNXFlYmY2Y3FzNzN2aXBkcGVnMmFmaSIsIm9yaWdpbl9qdGkiOiI0ZGNlYzc0NS02Nzk0LTRiNGUtYTRmOC05M2IzNjdlMTJkZGUiLCJldmVudF9pZCI6IjQ0NmY3NzkyLTk0NTgtNGQ2ZS1hNjdkLWM2NmFhMDA3ZjQyNyIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3MDk1MzQzNzUsImV4cCI6MTcwOTY2NDg4OCwiaWF0IjoxNzA5NjYxMjg4LCJqdGkiOiIzNmY0NzZhMy0yN2U5LTRmZDQtYWI3ZS1jMmIxYmQ1MzVmNDQiLCJ1c2VybmFtZSI6IjViYzk5NTgwLWE3N2EtNDNiNi04MTZkLTA1Njg5MmU0NjU1NCJ9.A1c3Z_5s-4Ear3ZoHge350JkmUtNADyweXqcWZ7n4L4Tf1opD4qjgKzbE7cGKDeGzSvBkqLGXPNvKJ5WnmqGhby9693bJiDct4sFLOMeE_eVW81VHt2rtuF01MMi3EQy9PBgxSgepG7PyoT6Brke8X8J0w6ZMAaU5ABHM3dwNMXqlo5Kri4mzVtgiMqwD0O0eVmGuUV2R3IBgIkJr2e8kXV0q1fdjjijNlRr1C8S-fs3Uvb_zckQoEvuIHPvKowxNVKsnzoqVaC_3blGzFBScSu8v2Urq3VHuwJAd1boJhQpmNXLytPIAWbdBT2wgyr2FkepQLtl2BOMMljj6uiD-g",
+      "sec-fetch-dest": "empty",
+      "x-amz-user-agent": "aws-amplify/6.0.10 api/1 framework/1",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "cloudfront-is-desktop-viewer": "true",
+      "sec-fetch-site": "cross-site",
+      "sec-ch-ua": "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\"",
+      "x-forwarded-port": "443"
+    },
+    "domainName": null
+  },
+  "prev": {
+    "result": {}
+  }
+}

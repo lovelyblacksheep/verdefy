@@ -1,0 +1,430 @@
+# this is an auto generated file. This will be overwritten
+
+mutation CreateSalesperson(
+  $input: CreateSalespersonInput!
+  $condition: ModelSalespersonConditionInput
+) {
+  createSalesperson(input: $input, condition: $condition) {
+    id
+    grossSalesToCustomers
+    grossProfitForDealership
+    ourProfitFromThem
+    lifetimeTotalTransactions
+    firstName
+    lastName
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    Transactions {
+      nextToken
+      __typename
+    }
+    dealershipID
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateSalesperson(
+  $input: UpdateSalespersonInput!
+  $condition: ModelSalespersonConditionInput
+) {
+  updateSalesperson(input: $input, condition: $condition) {
+    id
+    grossSalesToCustomers
+    grossProfitForDealership
+    ourProfitFromThem
+    lifetimeTotalTransactions
+    firstName
+    lastName
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    Transactions {
+      nextToken
+      __typename
+    }
+    dealershipID
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteSalesperson(
+  $input: DeleteSalespersonInput!
+  $condition: ModelSalespersonConditionInput
+) {
+  deleteSalesperson(input: $input, condition: $condition) {
+    id
+    grossSalesToCustomers
+    grossProfitForDealership
+    ourProfitFromThem
+    lifetimeTotalTransactions
+    firstName
+    lastName
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    Transactions {
+      nextToken
+      __typename
+    }
+    dealershipID
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateDealership(
+  $input: CreateDealershipInput!
+  $condition: ModelDealershipConditionInput
+) {
+  createDealership(input: $input, condition: $condition) {
+    id
+    outstandingBalance
+    grossSalesToCustomers
+    grossProfits
+    ourProfitFromThem
+    theirProfitMarginDollars
+    theirProfitMarginPercent
+    lifetimeTotalTransactions
+    Invoices {
+      nextToken
+      __typename
+    }
+    name
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    contactPerson
+    Salespeople {
+      nextToken
+      __typename
+    }
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateDealership(
+  $input: UpdateDealershipInput!
+  $condition: ModelDealershipConditionInput
+) {
+  updateDealership(input: $input, condition: $condition) {
+    id
+    outstandingBalance
+    grossSalesToCustomers
+    grossProfits
+    ourProfitFromThem
+    theirProfitMarginDollars
+    theirProfitMarginPercent
+    lifetimeTotalTransactions
+    Invoices {
+      nextToken
+      __typename
+    }
+    name
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    contactPerson
+    Salespeople {
+      nextToken
+      __typename
+    }
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteDealership(
+  $input: DeleteDealershipInput!
+  $condition: ModelDealershipConditionInput
+) {
+  deleteDealership(input: $input, condition: $condition) {
+    id
+    outstandingBalance
+    grossSalesToCustomers
+    grossProfits
+    ourProfitFromThem
+    theirProfitMarginDollars
+    theirProfitMarginPercent
+    lifetimeTotalTransactions
+    Invoices {
+      nextToken
+      __typename
+    }
+    name
+    address1
+    address2
+    city
+    state
+    phone
+    email
+    contactPerson
+    Salespeople {
+      nextToken
+      __typename
+    }
+    userId
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateInvoice(
+  $input: CreateInvoiceInput!
+  $condition: ModelInvoiceConditionInput
+) {
+  createInvoice(input: $input, condition: $condition) {
+    id
+    isPaid
+    Transactions {
+      nextToken
+      __typename
+    }
+    s3Link
+    dueDate
+    pastDue
+    dealershipID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateInvoice(
+  $input: UpdateInvoiceInput!
+  $condition: ModelInvoiceConditionInput
+) {
+  updateInvoice(input: $input, condition: $condition) {
+    id
+    isPaid
+    Transactions {
+      nextToken
+      __typename
+    }
+    s3Link
+    dueDate
+    pastDue
+    dealershipID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteInvoice(
+  $input: DeleteInvoiceInput!
+  $condition: ModelInvoiceConditionInput
+) {
+  deleteInvoice(input: $input, condition: $condition) {
+    id
+    isPaid
+    Transactions {
+      nextToken
+      __typename
+    }
+    s3Link
+    dueDate
+    pastDue
+    dealershipID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateTransaction(
+  $input: CreateTransactionInput!
+  $condition: ModelTransactionConditionInput
+) {
+  createTransaction(input: $input, condition: $condition) {
+    id
+    customerID
+    vehicleMake
+    vehicleModel
+    vehicleYear
+    VIN
+    vehicleType
+    isDiesel
+    averageMPG
+    offsetCost
+    ourMarkup
+    dealerMarkup
+    MSRP
+    s3Link
+    invoiceID
+    salespersonID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateTransaction(
+  $input: UpdateTransactionInput!
+  $condition: ModelTransactionConditionInput
+) {
+  updateTransaction(input: $input, condition: $condition) {
+    id
+    customerID
+    vehicleMake
+    vehicleModel
+    vehicleYear
+    VIN
+    vehicleType
+    isDiesel
+    averageMPG
+    offsetCost
+    ourMarkup
+    dealerMarkup
+    MSRP
+    s3Link
+    invoiceID
+    salespersonID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteTransaction(
+  $input: DeleteTransactionInput!
+  $condition: ModelTransactionConditionInput
+) {
+  deleteTransaction(input: $input, condition: $condition) {
+    id
+    customerID
+    vehicleMake
+    vehicleModel
+    vehicleYear
+    VIN
+    vehicleType
+    isDiesel
+    averageMPG
+    offsetCost
+    ourMarkup
+    dealerMarkup
+    MSRP
+    s3Link
+    invoiceID
+    salespersonID
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateCustomer(
+  $input: CreateCustomerInput!
+  $condition: ModelCustomerConditionInput
+) {
+  createCustomer(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    address1
+    address2
+    city
+    state
+    zipCode
+    yearOfBirth
+    monthOfBirth
+    dayOfBirth
+    gender
+    Transactions {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateCustomer(
+  $input: UpdateCustomerInput!
+  $condition: ModelCustomerConditionInput
+) {
+  updateCustomer(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    address1
+    address2
+    city
+    state
+    zipCode
+    yearOfBirth
+    monthOfBirth
+    dayOfBirth
+    gender
+    Transactions {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteCustomer(
+  $input: DeleteCustomerInput!
+  $condition: ModelCustomerConditionInput
+) {
+  deleteCustomer(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    address1
+    address2
+    city
+    state
+    zipCode
+    yearOfBirth
+    monthOfBirth
+    dayOfBirth
+    gender
+    Transactions {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}

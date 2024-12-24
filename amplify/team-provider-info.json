@@ -1,0 +1,48 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-verdefyvite-prod-181804-authRole",
+      "UnauthRoleArn": "arn:aws:iam::985060335249:role/amplify-verdefyvite-prod-181804-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::985060335249:role/amplify-verdefyvite-prod-181804-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-verdefyvite-prod-181804-deployment",
+      "UnauthRoleName": "amplify-verdefyvite-prod-181804-unauthRole",
+      "StackName": "amplify-verdefyvite-prod-181804",
+      "StackId": "arn:aws:cloudformation:us-east-1:985060335249:stack/amplify-verdefyvite-prod-181804/3ae17020-acf2-11ee-890d-0e73c1e9cadf",
+      "AmplifyAppId": "dv02lok2zqcpb",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-verdefyvite-prod-181804-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "function": {
+        "verdefyvitef57e0527PostConfirmation": {
+          "GROUP": "admins",
+          "deploymentBucketName": "amplify-verdefyvite-prod-181804-deployment",
+          "s3Key": "amplify-builds/verdefyvitef57e0527PostConfirmation-756f6b6a544155507571-build.zip"
+        },
+        "AdminQueries70070d66": {
+          "deploymentBucketName": "amplify-verdefyvite-prod-181804-deployment",
+          "s3Key": "amplify-builds/AdminQueries70070d66-45334850366762514343-build.zip"
+        },
+        "pdfGenV1": {
+          "deploymentBucketName": "amplify-verdefyvite-prod-181804-deployment",
+          "s3Key": "amplify-builds/pdfGenV1-456f30474f4a634e4c6b-build.zip"
+        },
+        "pdfInvoiceGen": {
+          "deploymentBucketName": "amplify-verdefyvite-prod-181804-deployment",
+          "s3Key": "amplify-builds/pdfInvoiceGen-68444b69715967394459-build.zip"
+        }
+      },
+      "auth": {
+        "verdefyvitef57e0527": {},
+        "userPoolGroups": {}
+      },
+      "storage": {
+        "verdefy": {}
+      },
+      "api": {
+        "AdminQueries": {},
+        "verdefyvite": {}
+      }
+    }
+  }
+}
